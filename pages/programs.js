@@ -1,17 +1,25 @@
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-export default function Programs() {
+function ProgramsPage() {
+  const [programs, setPrograms] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from API or local file
+    fetch('/api/programs')
+      .then(response => response.json())
+      .then(data => setPrograms(data));
+  }, []);
+
   return (
     <div>
-      <h1>Programs Page</h1>
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/candidates">Candidates</Link></li>
-          <li><Link href="/results">Results</Link></li>
-          <li><Link href="/teams">Teams</Link></li>
-        </ul>
-      </nav>
+      <h1>Programs</h1>
+      <ul>
+        {programs.map(program => (
+          <li key={program.id}>{program.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default ProgramsPage;
