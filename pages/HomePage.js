@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+// pages/HomePage.js
+import Link from 'next/link';
+import '../styles/styles.css';
 
-function HomePage() {
+export default function HomePage() {
   return (
-    <div>
+    <div className="container">
       <h1>Welcome to Art Fest Management</h1>
       <ul>
-        <li><Link to="/candidates">Candidates</Link></li>
-        <li><Link to="/programs">Programs</Link></li>
-        <li><Link to="/results">Results</Link></li>
-        <li><Link to="/teams">Teams</Link></li>
+        <li><Link href="/candidates"><a>Candidates</a></Link></li>
+        <li><Link href="/programs"><a>Programs</a></Link></li>
+        <li><Link href="/results"><a>Results</a></Link></li>
+        <li><Link href="/teams"><a>Teams</a></Link></li>
       </ul>
     </div>
   );
 }
-
-export default HomePage;
