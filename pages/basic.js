@@ -7,15 +7,15 @@ export default function Basic() {
       <h1 className={styles.title}>Basic Settings</h1>
       <form className={styles.formContainer}>
         <div className={styles.row}>
-          <label>
+          <label className={styles.label}>
             Section List:
-            <input type="text" name="sectionList" />
+            <input className={styles.input} type="text" name="sectionList" />
           </label>
         </div>
         <div className={styles.row}>
-          <label>
+          <label className={styles.label}>
             Program Type:
-            <select>
+            <select className={styles.select}>
               <option value="individual">Individual</option>
               <option value="shared">Shared by two</option>
               <option value="master">Master</option>
@@ -25,18 +25,18 @@ export default function Basic() {
           </label>
         </div>
         <div className={styles.row}>
-          <label>
+          <label className={styles.label}>
             Position Score Scale:
-            <input type="text" name="positionScoreScale" />
+            <input className={styles.input} type="text" name="positionScoreScale" />
           </label>
         </div>
         <div className={styles.row}>
-          <label>
+          <label className={styles.label}>
             Grade Score Scale:
-            <input type="text" name="gradeScoreScale" />
+            <input className={styles.input} type="text" name="gradeScoreScale" />
           </label>
         </div>
-        <button type="submit">Save</button>
+        <button className={styles.button} type="submit">Save</button>
       </form>
     </div>
   );
