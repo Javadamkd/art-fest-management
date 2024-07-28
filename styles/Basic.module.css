@@ -12,7 +12,7 @@
   color: #333;
 }
 
-form {
+.formContainer {
   max-width: 600px;
   margin: 0 auto;
 }
