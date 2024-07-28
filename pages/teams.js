@@ -1,17 +1,25 @@
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-export default function Teams() {
+function TeamsPage() {
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from API or local file
+    fetch('/api/teams')
+      .then(response => response.json())
+      .then(data => setTeams(data));
+  }, []);
+
   return (
     <div>
-      <h1>Teams Page</h1>
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/candidates">Candidates</Link></li>
-          <li><Link href="/programs">Programs</Link></li>
-          <li><Link href="/results">Results</Link></li>
-        </ul>
-      </nav>
+      <h1>Teams</h1>
+      <ul>
+        {teams.map(team => (
+          <li key={team.id}>{team.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default TeamsPage;
