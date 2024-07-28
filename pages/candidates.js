@@ -1,25 +1,9 @@
-import { useState, useEffect } from 'react';
-
-function CandidatesPage() {
-  const [candidates, setCandidates] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from API or local file
-    fetch('/api/candidates')
-      .then(response => response.json())
-      .then(data => setCandidates(data));
-  }, []);
-
+// pages/candidates.js
+export default function CandidatesPage() {
   return (
-    <div>
+    <div className="container">
       <h1>Candidates</h1>
-      <ul>
-        {candidates.map(candidate => (
-          <li key={candidate.id}>{candidate.name}</li>
-        ))}
-      </ul>
+      {/* Your content goes here */}
     </div>
   );
 }
-
-export default CandidatesPage;
