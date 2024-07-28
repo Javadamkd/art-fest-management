@@ -27,49 +27,49 @@ const CandidatesPage = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Candidates</h1>
       <form onSubmit={addCandidate} className={styles.form}>
+        <label className={styles.label}>Name:</label>
         <input 
           type="text" 
-          placeholder="Name" 
           value={name} 
           onChange={(e) => setName(e.target.value)} 
           required 
           className={styles.input}
         />
+        <label className={styles.label}>Code:</label>
         <input 
           type="text" 
-          placeholder="Code" 
           value={code} 
           onChange={(e) => setCode(e.target.value)} 
           required 
           className={styles.input}
         />
+        <label className={styles.label}>Team:</label>
         <input 
           type="text" 
-          placeholder="Team" 
           value={team} 
           onChange={(e) => setTeam(e.target.value)} 
           required 
           className={styles.input}
         />
+        <label className={styles.label}>Section:</label>
         <input 
           type="text" 
-          placeholder="Section" 
           value={section} 
           onChange={(e) => setSection(e.target.value)} 
           required 
           className={styles.input}
         />
+        <label className={styles.label}>Class:</label>
         <input 
           type="text" 
-          placeholder="Class" 
           value={classGrade} 
           onChange={(e) => setClassGrade(e.target.value)} 
           required 
           className={styles.input}
         />
+        <label className={styles.label}>Total Points:</label>
         <input 
           type="number" 
-          placeholder="Total Points" 
           value={totalPoints} 
           onChange={(e) => setTotalPoints(e.target.value)} 
           required 
