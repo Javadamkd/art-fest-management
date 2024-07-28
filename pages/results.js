@@ -1,27 +1,17 @@
-import { connectToDatabase } from '../lib/db';
+import Link from 'next/link';
 
-export default function Results({ results }) {
+export default function Results() {
   return (
-    <Layout>
-      <h1>Results</h1>
-      <ul>
-        {results.map(result => (
-          <li key={result._id}>
-            {result.program}: {result.position}, {result.grade}
-          </li>
-        ))}
-      </ul>
-    </Layout>
+    <div>
+      <h1>Results Page</h1>
+      <nav>
+        <ul>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/candidates">Candidates</Link></li>
+          <li><Link href="/programs">Programs</Link></li>
+          <li><Link href="/teams">Teams</Link></li>
+        </ul>
+      </nav>
+    </div>
   );
 }
-
-export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-  const results = await db.collection('results').find({}).toArray();
-  return {
-    props: {
-      results: JSON.parse(JSON.stringify(results)),
-    },
-  };
-}
-
