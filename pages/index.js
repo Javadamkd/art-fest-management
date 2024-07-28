@@ -13,6 +13,7 @@ export default function Home() {
         <Link href="/programs" className={styles.link}>Programs</Link>
         <Link href="/results" className={styles.link}>Results</Link>
         <Link href="/teams" className={styles.link}>Teams</Link>
+        <Link href="/basic" className={styles.link}>Basic</Link>
       </div>
     </div>
   );
