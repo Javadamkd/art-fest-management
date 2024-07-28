@@ -73,66 +73,70 @@ export default function Basic() {
       <div className={styles.section}>
         <h2 className={styles.subtitle}>Position Score Scale</h2>
         <form className={styles.form} onSubmit={handleScoreSubmit}>
-          <select
-            name="type"
-            value={scoreForm.type}
-            onChange={handleScoreChange}
-            className={styles.select}
-          >
-            <option value="Individual">Individual</option>
-            <option value="Shared by two">Shared by two</option>
-            <option value="Master">Master</option>
-            <option value="Group">Group</option>
-          </select>
-          <input
-            type="number"
-            name="position1"
-            value={scoreForm.position1}
-            onChange={handleScoreChange}
-            placeholder="1st Position Score"
-            className={styles.input}
-          />
-          <input
-            type="number"
-            name="position2"
-            value={scoreForm.position2}
-            onChange={handleScoreChange}
-            placeholder="2nd Position Score"
-            className={styles.input}
-          />
-          <input
-            type="number"
-            name="position3"
-            value={scoreForm.position3}
-            onChange={handleScoreChange}
-            placeholder="3rd Position Score"
-            className={styles.input}
-          />
-          <input
-            type="number"
-            name="gradeA"
-            value={scoreForm.gradeA}
-            onChange={handleScoreChange}
-            placeholder="Grade A Score"
-            className={styles.input}
-          />
-          <input
-            type="number"
-            name="gradeB"
-            value={scoreForm.gradeB}
-            onChange={handleScoreChange}
-            placeholder="Grade B Score"
-            className={styles.input}
-          />
-          <input
-            type="number"
-            name="gradeC"
-            value={scoreForm.gradeC}
-            onChange={handleScoreChange}
-            placeholder="Grade C Score"
-            className={styles.input}
-          />
-          <button type="submit" className={styles.button}>Add Score Scale</button>
+          <div className={styles.formRow}>
+            <select
+              name="type"
+              value={scoreForm.type}
+              onChange={handleScoreChange}
+              className={styles.select}
+            >
+              <option value="Individual">Individual</option>
+              <option value="Shared by two">Shared by two</option>
+              <option value="Master">Master</option>
+              <option value="Group">Group</option>
+            </select>
+            <input
+              type="number"
+              name="position1"
+              value={scoreForm.position1}
+              onChange={handleScoreChange}
+              placeholder="1st Position Score"
+              className={styles.input}
+            />
+            <input
+              type="number"
+              name="position2"
+              value={scoreForm.position2}
+              onChange={handleScoreChange}
+              placeholder="2nd Position Score"
+              className={styles.input}
+            />
+            <input
+              type="number"
+              name="position3"
+              value={scoreForm.position3}
+              onChange={handleScoreChange}
+              placeholder="3rd Position Score"
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.formRow}>
+            <input
+              type="number"
+              name="gradeA"
+              value={scoreForm.gradeA}
+              onChange={handleScoreChange}
+              placeholder="Grade A Score"
+              className={styles.input}
+            />
+            <input
+              type="number"
+              name="gradeB"
+              value={scoreForm.gradeB}
+              onChange={handleScoreChange}
+              placeholder="Grade B Score"
+              className={styles.input}
+            />
+            <input
+              type="number"
+              name="gradeC"
+              value={scoreForm.gradeC}
+              onChange={handleScoreChange}
+              placeholder="Grade C Score"
+              className={styles.input}
+            />
+            <button type="submit" className={styles.button}>Add Score Scale</button>
+          </div>
         </form>
         <table className={styles.table}>
           <thead>
