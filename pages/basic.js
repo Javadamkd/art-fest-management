@@ -48,10 +48,10 @@ export default function Basic() {
 
   return (
     <div className={styles.container}>
-      <h1>Basic</h1>
+      <h1 className={styles.title}>Basic</h1>
 
       <div className={styles.section}>
-        <h2>Section List</h2>
+        <h2 className={styles.subtitle}>Section List</h2>
         <form className={styles.form} onSubmit={handleSectionSubmit}>
           <input
             type="text"
@@ -59,20 +59,26 @@ export default function Basic() {
             value={sectionForm.sectionName}
             onChange={handleSectionChange}
             placeholder="Section Name"
+            className={styles.input}
           />
-          <button type="submit">Add Section</button>
+          <button type="submit" className={styles.button}>Add Section</button>
         </form>
         <ul className={styles.list}>
           {sections.map((section, index) => (
-            <li key={index}>{section.sectionName}</li>
+            <li key={index} className={styles.listItem}>{section.sectionName}</li>
           ))}
         </ul>
       </div>
 
       <div className={styles.section}>
-        <h2>Position Score Scale</h2>
+        <h2 className={styles.subtitle}>Position Score Scale</h2>
         <form className={styles.form} onSubmit={handleScoreSubmit}>
-          <select name="type" value={scoreForm.type} onChange={handleScoreChange}>
+          <select
+            name="type"
+            value={scoreForm.type}
+            onChange={handleScoreChange}
+            className={styles.select}
+          >
             <option value="Individual">Individual</option>
             <option value="Shared by two">Shared by two</option>
             <option value="Master">Master</option>
@@ -84,6 +90,7 @@ export default function Basic() {
             value={scoreForm.position1}
             onChange={handleScoreChange}
             placeholder="1st Position Score"
+            className={styles.input}
           />
           <input
             type="number"
@@ -91,6 +98,7 @@ export default function Basic() {
             value={scoreForm.position2}
             onChange={handleScoreChange}
             placeholder="2nd Position Score"
+            className={styles.input}
           />
           <input
             type="number"
@@ -98,6 +106,7 @@ export default function Basic() {
             value={scoreForm.position3}
             onChange={handleScoreChange}
             placeholder="3rd Position Score"
+            className={styles.input}
           />
           <input
             type="number"
@@ -105,6 +114,7 @@ export default function Basic() {
             value={scoreForm.gradeA}
             onChange={handleScoreChange}
             placeholder="Grade A Score"
+            className={styles.input}
           />
           <input
             type="number"
@@ -112,6 +122,7 @@ export default function Basic() {
             value={scoreForm.gradeB}
             onChange={handleScoreChange}
             placeholder="Grade B Score"
+            className={styles.input}
           />
           <input
             type="number"
@@ -119,31 +130,32 @@ export default function Basic() {
             value={scoreForm.gradeC}
             onChange={handleScoreChange}
             placeholder="Grade C Score"
+            className={styles.input}
           />
-          <button type="submit">Add Score Scale</button>
+          <button type="submit" className={styles.button}>Add Score Scale</button>
         </form>
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>1st Position</th>
-              <th>2nd Position</th>
-              <th>3rd Position</th>
-              <th>Grade A</th>
-              <th>Grade B</th>
-              <th>Grade C</th>
+              <th className={styles.tableHeader}>Type</th>
+              <th className={styles.tableHeader}>1st Position</th>
+              <th className={styles.tableHeader}>2nd Position</th>
+              <th className={styles.tableHeader}>3rd Position</th>
+              <th className={styles.tableHeader}>Grade A</th>
+              <th className={styles.tableHeader}>Grade B</th>
+              <th className={styles.tableHeader}>Grade C</th>
             </tr>
           </thead>
           <tbody>
             {scores.map((score, index) => (
               <tr key={index} className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
-                <td>{score.type}</td>
-                <td>{score.position1}</td>
-                <td>{score.position2}</td>
-                <td>{score.position3}</td>
-                <td>{score.gradeA}</td>
-                <td>{score.gradeB}</td>
-                <td>{score.gradeC}</td>
+                <td className={styles.tableCell}>{score.type}</td>
+                <td className={styles.tableCell}>{score.position1}</td>
+                <td className={styles.tableCell}>{score.position2}</td>
+                <td className={styles.tableCell}>{score.position3}</td>
+                <td className={styles.tableCell}>{score.gradeA}</td>
+                <td className={styles.tableCell}>{score.gradeB}</td>
+                <td className={styles.tableCell}>{score.gradeC}</td>
               </tr>
             ))}
           </tbody>
