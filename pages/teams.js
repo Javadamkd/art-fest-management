@@ -1,25 +1,9 @@
-import { useState, useEffect } from 'react';
-
-function TeamsPage() {
-  const [teams, setTeams] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from API or local file
-    fetch('/api/teams')
-      .then(response => response.json())
-      .then(data => setTeams(data));
-  }, []);
-
+// pages/teams.js
+export default function TeamsPage() {
   return (
-    <div>
+    <div className="container">
       <h1>Teams</h1>
-      <ul>
-        {teams.map(team => (
-          <li key={team.id}>{team.name}</li>
-        ))}
-      </ul>
+      {/* Your content goes here */}
     </div>
   );
 }
-
-export default TeamsPage;
