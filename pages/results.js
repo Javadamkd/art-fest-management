@@ -1,27 +1,9 @@
-import { useState, useEffect } from 'react';
-
-function ResultsPage() {
-  const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from API or local file
-    fetch('/api/results')
-      .then(response => response.json())
-      .then(data => setResults(data));
-  }, []);
-
+// pages/results.js
+export default function ResultsPage() {
   return (
-    <div>
+    <div className="container">
       <h1>Results</h1>
-      <ul>
-        {results.map(result => (
-          <li key={result.id}>
-            {result.candidateName} - {result.score}
-          </li>
-        ))}
-      </ul>
+      {/* Your content goes here */}
     </div>
   );
 }
-
-export default ResultsPage;
