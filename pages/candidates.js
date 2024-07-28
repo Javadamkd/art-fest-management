@@ -1,27 +1,17 @@
-import { connectToDatabase } from '../lib/db';
+import Link from 'next/link';
 
-export default function Candidates({ candidates }) {
+export default function Candidates() {
   return (
-    <Layout>
-      <h1>Candidates</h1>
-      <ul>
-        {candidates.map(candidate => (
-          <li key={candidate._id}>
-            {candidate.name} - {candidate.totalScore} points
-          </li>
-        ))}
-      </ul>
-    </Layout>
+    <div>
+      <h1>Candidates Page</h1>
+      <nav>
+        <ul>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/programs">Programs</Link></li>
+          <li><Link href="/results">Results</Link></li>
+          <li><Link href="/teams">Teams</Link></li>
+        </ul>
+      </nav>
+    </div>
   );
 }
-
-export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-  const candidates = await db.collection('candidates').find({}).toArray();
-  return {
-    props: {
-      candidates: JSON.parse(JSON.stringify(candidates)),
-    },
-  };
-}
-
