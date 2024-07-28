@@ -1,5 +1,6 @@
 // pages/candidates.js
 import React, { useState } from 'react';
+import styles from '../styles/Candidates.module.css';
 
 const CandidatesPage = () => {
   const [candidates, setCandidates] = useState([]);
@@ -23,74 +24,62 @@ const CandidatesPage = () => {
   };
 
   return (
-    <div>
-      <h1>Candidates</h1>
-      <form onSubmit={addCandidate}>
-        <div>
-          <label>Name</label>
-          <input 
-            type="text" 
-            placeholder="Name" 
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Code</label>
-          <input 
-            type="text" 
-            placeholder="Code" 
-            value={code} 
-            onChange={(e) => setCode(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Team</label>
-          <input 
-            type="text" 
-            placeholder="Team" 
-            value={team} 
-            onChange={(e) => setTeam(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Section</label>
-          <input 
-            type="text" 
-            placeholder="Section" 
-            value={section} 
-            onChange={(e) => setSection(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Class</label>
-          <input 
-            type="text" 
-            placeholder="Class" 
-            value={classGrade} 
-            onChange={(e) => setClassGrade(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Total Points</label>
-          <input 
-            type="number" 
-            placeholder="Total Points" 
-            value={totalPoints} 
-            onChange={(e) => setTotalPoints(e.target.value)} 
-            required 
-          />
-        </div>
-        <button type="submit">Add Candidate</button>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Candidates</h1>
+      <form onSubmit={addCandidate} className={styles.form}>
+        <input 
+          type="text" 
+          placeholder="Name" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <input 
+          type="text" 
+          placeholder="Code" 
+          value={code} 
+          onChange={(e) => setCode(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <input 
+          type="text" 
+          placeholder="Team" 
+          value={team} 
+          onChange={(e) => setTeam(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <input 
+          type="text" 
+          placeholder="Section" 
+          value={section} 
+          onChange={(e) => setSection(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <input 
+          type="text" 
+          placeholder="Class" 
+          value={classGrade} 
+          onChange={(e) => setClassGrade(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <input 
+          type="number" 
+          placeholder="Total Points" 
+          value={totalPoints} 
+          onChange={(e) => setTotalPoints(e.target.value)} 
+          required 
+          className={styles.input}
+        />
+        <button type="submit" className={styles.button}>Add Candidate</button>
       </form>
-      <ul>
+      <ul className={styles.list}>
         {candidates.map((candidate, index) => (
-          <li key={index}>
+          <li key={index} className={styles.candidate}>
             <h2>{candidate.name}</h2>
             <p>Code: {candidate.code}</p>
             <p>Team: {candidate.team}</p>
