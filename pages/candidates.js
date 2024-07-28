@@ -1,17 +1,25 @@
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-export default function Candidates() {
+function CandidatesPage() {
+  const [candidates, setCandidates] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from API or local file
+    fetch('/api/candidates')
+      .then(response => response.json())
+      .then(data => setCandidates(data));
+  }, []);
+
   return (
     <div>
-      <h1>Candidates Page</h1>
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/programs">Programs</Link></li>
-          <li><Link href="/results">Results</Link></li>
-          <li><Link href="/teams">Teams</Link></li>
-        </ul>
-      </nav>
+      <h1>Candidates</h1>
+      <ul>
+        {candidates.map(candidate => (
+          <li key={candidate.id}>{candidate.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default CandidatesPage;
