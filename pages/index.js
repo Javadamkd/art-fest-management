@@ -14,7 +14,7 @@ export default function Home() {
           <li>
             <Link href="/teams">Teams</Link>
           </li>
-          <!-- Add other links here -->
+          {/* Add other links here */}
         </ul>
       </nav>
     </div>
