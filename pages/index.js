@@ -14,7 +14,15 @@ export default function Home() {
           <li>
             <Link href="/teams">Teams</Link>
           </li>
-          {/* Add other links here */}
+          <li>
+            <Link href="/basic">Basic</Link>
+          </li>
+          <li>
+            <Link href="/rank-top">Rank & Top</Link>
+          </li>
+          <li>
+            <Link href="/search">Search</Link>
+          </li>
         </ul>
       </nav>
     </div>
