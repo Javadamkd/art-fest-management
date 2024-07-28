@@ -47,3 +47,11 @@
 .button:hover {
   background-color: #005bb5;
 }
+
+.sectionContainer {
+  margin-bottom: 15px;
+}
+
+.addButton {
+  margin-bottom: 15px;
+}
