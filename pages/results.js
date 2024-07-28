@@ -1,17 +1,27 @@
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-export default function Results() {
+function ResultsPage() {
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from API or local file
+    fetch('/api/results')
+      .then(response => response.json())
+      .then(data => setResults(data));
+  }, []);
+
   return (
     <div>
-      <h1>Results Page</h1>
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/candidates">Candidates</Link></li>
-          <li><Link href="/programs">Programs</Link></li>
-          <li><Link href="/teams">Teams</Link></li>
-        </ul>
-      </nav>
+      <h1>Results</h1>
+      <ul>
+        {results.map(result => (
+          <li key={result.id}>
+            {result.candidateName} - {result.score}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default ResultsPage;
