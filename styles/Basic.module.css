@@ -2,51 +2,63 @@
 .container {
   padding: 20px;
 }
-h1 {
+
+.title {
   font-size: 2em;
   margin-bottom: 20px;
 }
+
 .section {
   margin-bottom: 40px;
 }
-h2 {
+
+.subtitle {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+
 .form {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
-.form input, .form select {
+
+.input, .select {
   padding: 10px;
   font-size: 1em;
 }
-.form button {
+
+.button {
   padding: 10px;
   font-size: 1em;
   cursor: pointer;
 }
+
 .list {
   list-style-type: none;
   padding: 0;
 }
-.list li {
+
+.listItem {
   padding: 10px;
   border: 1px solid #ddd;
   margin-bottom: 5px;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;
 }
-.table th, .table td {
+
+.tableHeader, .tableCell {
   padding: 10px;
   border: 1px solid #ddd;
 }
+
 .evenRow {
   background-color: #f9f9f9;
 }
+
 .oddRow {
   background-color: #fff;
 }
