@@ -1,25 +1,9 @@
-import { useState, useEffect } from 'react';
-
-function ProgramsPage() {
-  const [programs, setPrograms] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from API or local file
-    fetch('/api/programs')
-      .then(response => response.json())
-      .then(data => setPrograms(data));
-  }, []);
-
+// pages/programs.js
+export default function ProgramsPage() {
   return (
-    <div>
+    <div className="container">
       <h1>Programs</h1>
-      <ul>
-        {programs.map(program => (
-          <li key={program.id}>{program.name}</li>
-        ))}
-      </ul>
+      {/* Your content goes here */}
     </div>
   );
 }
-
-export default ProgramsPage;
