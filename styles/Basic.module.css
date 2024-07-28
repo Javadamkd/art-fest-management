@@ -35,12 +35,21 @@
   margin-bottom: 20px;
 }
 
+.formRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
 .input, .select {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: calc(33% - 10px);
+  width: calc(20% - 10px);
 }
 
 .button {
