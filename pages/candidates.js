@@ -1,78 +1,76 @@
 // pages/candidates.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from '../styles/Candidates.module.css';
 
-const CandidatesPage = () => {
+export default function Candidates() {
   const [candidates, setCandidates] = useState([]);
-  const [name, setName] = useState('');
-  const [code, setCode] = useState('');
-  const [team, setTeam] = useState('');
-  const [section, setSection] = useState('');
-  const [classGrade, setClassGrade] = useState('');
-  const [totalPoints, setTotalPoints] = useState('');
+  const [form, setForm] = useState({
+    chestNo: '',
+    name: '',
+    teamCode: '',
+    section: '',
+    className: ''
+  });
 
-  const addCandidate = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const newCandidate = { name, code, team, section, classGrade, totalPoints };
-    setCandidates([...candidates, newCandidate]);
-    setName('');
-    setCode('');
-    setTeam('');
-    setSection('');
-    setClassGrade('');
-    setTotalPoints('');
+    setCandidates([...candidates, form]);
+    setForm({
+      chestNo: '',
+      name: '',
+      teamCode: '',
+      section: '',
+      className: ''
+    });
   };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Candidates</h1>
-      <form onSubmit={addCandidate} className={styles.form}>
-        <input 
-          type="text" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="chestNo"
+          value={form.chestNo}
+          onChange={handleChange}
+          placeholder="Chest No"
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
           placeholder="Name"
-          required 
           className={styles.input}
         />
-        <input 
-          type="text" 
-          value={code} 
-          onChange={(e) => setCode(e.target.value)} 
-          placeholder="Code"
-          required 
+        <input
+          type="text"
+          name="teamCode"
+          value={form.teamCode}
+          onChange={handleChange}
+          placeholder="Team Code"
           className={styles.input}
         />
-        <input 
-          type="text" 
-          value={team} 
-          onChange={(e) => setTeam(e.target.value)} 
-          placeholder="Team"
-          required 
-          className={styles.input}
-        />
-        <input 
-          type="text" 
-          value={section} 
-          onChange={(e) => setSection(e.target.value)} 
+        <input
+          type="text"
+          name="section"
+          value={form.section}
+          onChange={handleChange}
           placeholder="Section"
-          required 
           className={styles.input}
         />
-        <input 
-          type="text" 
-          value={classGrade} 
-          onChange={(e) => setClassGrade(e.target.value)} 
+        <input
+          type="text"
+          name="className"
+          value={form.className}
+          onChange={handleChange}
           placeholder="Class"
-          required 
-          className={styles.input}
-        />
-        <input 
-          type="number" 
-          value={totalPoints} 
-          onChange={(e) => setTotalPoints(e.target.value)} 
-          placeholder="Total Points"
-          required 
           className={styles.input}
         />
         <button type="submit" className={styles.button}>Add Candidate</button>
@@ -80,29 +78,25 @@ const CandidatesPage = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Team</th>
-            <th>Section</th>
-            <th>Class</th>
-            <th>Total Points</th>
+            <th className={styles.tableHeader}>Chest No</th>
+            <th className={styles.tableHeader}>Name</th>
+            <th className={styles.tableHeader}>Team Code</th>
+            <th className={styles.tableHeader}>Section</th>
+            <th className={styles.tableHeader}>Class</th>
           </tr>
         </thead>
         <tbody>
           {candidates.map((candidate, index) => (
-            <tr key={index} className={styles.row}>
-              <td>{candidate.name}</td>
-              <td>{candidate.code}</td>
-              <td>{candidate.team}</td>
-              <td>{candidate.section}</td>
-              <td>{candidate.classGrade}</td>
-              <td>{candidate.totalPoints}</td>
+            <tr key={index} className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
+              <td className={styles.tableCell}>{candidate.chestNo}</td>
+              <td className={styles.tableCell}>{candidate.name}</td>
+              <td className={styles.tableCell}>{candidate.teamCode}</td>
+              <td className={styles.tableCell}>{candidate.section}</td>
+              <td className={styles.tableCell}>{candidate.className}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
-};
-
-export default CandidatesPage;
+}
