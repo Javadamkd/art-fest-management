@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
-    <div className={sidebarCollapsed ? styles.containerCollapsed : styles.container}>
+    <div className={styles.container}>
       <aside className={sidebarCollapsed ? styles.sidebarCollapsed : styles.sidebar}>
         <h2>Art Fest Management</h2>
         <ul>
@@ -41,7 +41,9 @@ export default function Layout({ children }) {
           ☰
         </button>
       </aside>
-      <main className={sidebarCollapsed ? styles.contentCollapsed : styles.content}>{children}</main>
+      <main className={sidebarCollapsed ? styles.contentCollapsed : styles.content}>
+        {children}
+      </main>
     </div>
   );
 }
