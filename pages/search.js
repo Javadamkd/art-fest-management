@@ -6,12 +6,19 @@ export default function Search() {
       <h1>Search</h1>
       <form>
         <label>
-          Search Query:
-          <input type="text" name="query" />
+          Candidate Search:
+          <input type="text" name="candidateSearch" />
+        </label>
+        <label>
+          Program Search:
+          <input type="text" name="programSearch" />
+        </label>
+        <label>
+          Team Search:
+          <input type="text" name="teamSearch" />
         </label>
         <button type="submit">Search</button>
       </form>
-      {/* Add more form fields and functionalities as needed */}
     </Layout>
   );
 }
