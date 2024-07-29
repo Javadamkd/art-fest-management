@@ -1,7 +1,7 @@
-// pages/art-fest-management.js
+// pages/index.js
 import Layout from '../components/Layout';
 
-export default function ArtFestManagement() {
+export default function Home() {
   return (
     <Layout>
       <h1>Art Fest Management</h1>
