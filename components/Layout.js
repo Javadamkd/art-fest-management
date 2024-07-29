@@ -28,19 +28,29 @@ function Sidebar({ isCollapsed }) {
       <h2>Art Fest</h2>
       <ul>
         <li>
-          <Link href="/candidates">Candidates</Link>
+          <Link href="/candidates">
+            <a>Candidates</a>
+          </Link>
         </li>
         <li>
-          <Link href="/teams">Teams</Link>
+          <Link href="/teams">
+            <a>Teams</a>
+          </Link>
         </li>
         <li>
-          <Link href="/basic">Basic</Link>
+          <Link href="/basic">
+            <a>Basic</a>
+          </Link>
         </li>
         <li>
-          <Link href="/rank-top">Rank & Top</Link>
+          <Link href="/rank-top">
+            <a>Rank & Top</a>
+          </Link>
         </li>
         <li>
-          <Link href="/search">Search</Link>
+          <Link href="/search">
+            <a>Search</a>
+          </Link>
         </li>
       </ul>
     </nav>
