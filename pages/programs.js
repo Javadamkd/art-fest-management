@@ -1,9 +1,10 @@
+// pages/programs.js
 import Layout from '../components/Layout';
 
-export default function Program() {
+export default function Programs() {
   return (
     <Layout>
-      <h1>Program</h1>
+      <h1>Programs</h1>
       <form>
         <label>
           Code:
