@@ -1,15 +1,40 @@
-import Header from './Header';
-import Footer from './Footer';
-import NavBar from './NavBar';
+// components/Layout.js
+import Link from 'next/link';
 
-const Layout = ({ children }) => (
-  <>
-    <Header />
-    <NavBar />
-    <main>{children}</main>
-    <Footer />
-  </>
-);
+export default function Layout({ children }) {
+  return (
+    <div className="container">
+      <Sidebar />
+      <div className="content">
+        {children}
+      </div>
+    </div>
+  );
+}
 
-export default Layout;
-
+function Sidebar() {
+  return (
+    <div className="sidebar">
+      <ul>
+        <li>
+          <Link href="/candidates">Candidates</Link>
+        </li>
+        <li>
+          <Link href="/teams">Teams</Link>
+        </li>
+        <li>
+          <Link href="/basic">Basic</Link>
+        </li>
+        <li>
+          <Link href="/rank-top">Rank & Top</Link>
+        </li>
+        <li>
+          <Link href="/search">Search</Link>
+        </li>
+        <li>
+          <Link href="/art-fest-management">Art Fest Management</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
