@@ -14,27 +14,27 @@ export default function Layout({ children }) {
         </button>
         <ul className={sidebarCollapsed ? styles.collapsed : ''}>
           <li>
-            <Link href="/candidates">
+            <Link href="/candidates" legacyBehavior>
               <a>Candidates</a>
             </Link>
           </li>
           <li>
-            <Link href="/teams">
+            <Link href="/teams" legacyBehavior>
               <a>Teams</a>
             </Link>
           </li>
           <li>
-            <Link href="/basic">
+            <Link href="/basic" legacyBehavior>
               <a>Basic</a>
             </Link>
           </li>
           <li>
-            <Link href="/rank-top">
+            <Link href="/rank-top" legacyBehavior>
               <a>Rank & Top</a>
             </Link>
           </li>
           <li>
-            <Link href="/search">
+            <Link href="/search" legacyBehavior>
               <a>Search</a>
             </Link>
           </li>
