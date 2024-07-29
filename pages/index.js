@@ -10,29 +10,19 @@ export default function Home() {
         <nav>
           <ul>
             <li>
-              <Link href="/candidates">
-                <a>Candidates</a>
-              </Link>
+              <Link href="/candidates">Candidates</Link>
             </li>
             <li>
-              <Link href="/teams">
-                <a>Teams</a>
-              </Link>
+              <Link href="/teams">Teams</Link>
             </li>
             <li>
-              <Link href="/basic">
-                <a>Basic</a>
-              </Link>
+              <Link href="/basic">Basic</Link>
             </li>
             <li>
-              <Link href="/rank-top">
-                <a>Rank & Top</a>
-              </Link>
+              <Link href="/rank-top">Rank & Top</Link>
             </li>
             <li>
-              <Link href="/search">
-                <a>Search</a>
-              </Link>
+              <Link href="/search">Search</Link>
             </li>
           </ul>
         </nav>
