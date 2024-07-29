@@ -1,4 +1,6 @@
 // pages/candidates.js
+import Link from 'next/link';
+
 export default function Candidates() {
   return (
     <div className="container">
