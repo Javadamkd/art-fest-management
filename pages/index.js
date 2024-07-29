@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link'; // Import Link from next/link
 
 export default function Home() {
   return (
@@ -6,7 +7,6 @@ export default function Home() {
       <Head>
         <title>Art Fest Management</title>
       </Head>
-      {/* The Header should not be included here if it's already in _app.js */}
       <main>
         <h1>Art Fest Management</h1>
         <nav>
