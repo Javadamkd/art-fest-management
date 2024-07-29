@@ -1,11 +1,17 @@
-// pages/candidates.js
 import Layout from '../components/Layout';
 
 export default function Candidates() {
   return (
     <Layout>
       <h1>Candidates</h1>
-      <p>Content for Candidates page.</p>
+      <form>
+        <label>
+          Candidate Name:
+          <input type="text" name="name" />
+        </label>
+        <button type="submit">Add Candidate</button>
+      </form>
+      {/* Add more form fields and functionalities as needed */}
     </Layout>
   );
 }
