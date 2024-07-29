@@ -6,12 +6,27 @@ export default function Candidates() {
       <h1>Candidates</h1>
       <form>
         <label>
-          Candidate Name:
+          Code:
+          <input type="text" name="code" />
+        </label>
+        <label>
+          Name:
           <input type="text" name="name" />
+        </label>
+        <label>
+          Team:
+          <input type="text" name="team" />
+        </label>
+        <label>
+          Section:
+          <input type="text" name="section" />
+        </label>
+        <label>
+          Class:
+          <input type="text" name="class" />
         </label>
         <button type="submit">Add Candidate</button>
       </form>
-      {/* Add more form fields and functionalities as needed */}
     </Layout>
   );
 }
