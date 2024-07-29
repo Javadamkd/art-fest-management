@@ -1,4 +1,6 @@
 // pages/search.js
+import Link from 'next/link';
+
 export default function Search() {
   return (
     <div className="container">
