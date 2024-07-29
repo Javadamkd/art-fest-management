@@ -1,11 +1,17 @@
-// pages/basic.js
 import Layout from '../components/Layout';
 
 export default function Basic() {
   return (
     <Layout>
       <h1>Basic</h1>
-      <p>Content for Basic page.</p>
+      <form>
+        <label>
+          Basic Info:
+          <input type="text" name="basicInfo" />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      {/* Add more form fields and functionalities as needed */}
     </Layout>
   );
 }
