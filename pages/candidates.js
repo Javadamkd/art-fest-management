@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 export default function Candidates() {
   return (
     <Layout>
-      <h1>Candidates</h1>
       <div className="card">
-        <p>List of candidates...</p>
+        <h1>Candidates</h1>
+        <p>List and manage candidates here.</p>
       </div>
     </Layout>
   );
