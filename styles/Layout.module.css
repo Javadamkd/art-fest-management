@@ -1,0 +1,87 @@
+/* styles/Layout.module.css */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.sidebarCollapsed {
+  width: 60px;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  color: #007bff;
+}
+
+.sidebarCollapsed ul li {
+  text-align: center;
+}
+
+.sidebarCollapsed ul li a {
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebarCollapsed h2 {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 40px;
+  background-color: #ffffff;
+  transition: margin-left 0.3s;
+}
+
+.contentCollapsed {
+  margin-left: 60px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.menuButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #343a40;
+}
