@@ -1,4 +1,6 @@
 // pages/rank-top.js
+import Link from 'next/link';
+
 export default function RankTop() {
   return (
     <div className="container">
