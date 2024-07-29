@@ -11,19 +11,23 @@ body {
 .container {
   display: flex;
   min-height: 100vh;
+  transition: margin-left 0.3s;
 }
 
 .sidebar {
   width: 240px;
-  background-color: #ffffff;
-  border-right: 1px solid #eaeaea;
+  background-color: #343a40;
+  color: #ffffff;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100%;
+  transition: width 0.3s;
 }
 
 .sidebar h2 {
   font-size: 1.2rem;
-  color: #333;
+  color: #ffffff;
 }
 
 .sidebar ul {
@@ -37,18 +41,41 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .sidebar ul li a:hover {
-  color: #0070f3;
+  color: #007bff;
+}
+
+.sidebar-collapsed {
+  width: 60px;
+}
+
+.sidebar-collapsed ul li {
+  text-align: center;
+}
+
+.sidebar-collapsed ul li a {
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebar-collapsed h2 {
+  display: none;
 }
 
 .content {
   flex: 1;
+  margin-left: 240px;
   padding: 40px;
   background-color: #ffffff;
+  transition: margin-left 0.3s;
+}
+
+.content-collapsed {
+  margin-left: 60px;
 }
 
 .card {
@@ -57,4 +84,13 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+.menu-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #343a40;
 }
