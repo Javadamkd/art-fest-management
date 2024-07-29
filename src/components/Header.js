@@ -1,12 +1,25 @@
-import React from 'react';
+import Link from 'next/link';
 
-function Header() {
+const Header = () => {
   return (
-    <header className="header">
-      <h1>Welcome to Art Fest Management</h1>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/results">
+              <a>Results</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/programs">
+              <a>Programs</a>
+            </Link>
+          </li>
+          {/* Add other navigation links here */}
+        </ul>
+      </nav>
     </header>
   );
-}
+};
 
 export default Header;
-
