@@ -9,9 +9,12 @@ export default function Teams() {
           Team Name:
           <input type="text" name="teamName" />
         </label>
+        <label>
+          Code:
+          <input type="text" name="code" />
+        </label>
         <button type="submit">Add Team</button>
       </form>
-      {/* Add more form fields and functionalities as needed */}
     </Layout>
   );
 }
