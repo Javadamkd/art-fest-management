@@ -1,92 +1,43 @@
 /* styles/Layout.module.css */
-
 .container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .sidebar {
-  width: 240px;
-  background-color: #1e1e2d;
-  color: #ffffff;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  height: 100%;
-  transition: width 0.3s, background-color 0.3s;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
 }
 
-.sidebarCollapsed {
-  width: 60px;
-  background-color: #27293d;
-}
-
-.sidebar h2 {
-  font-size: 1.2rem;
-  color: #ffffff;
+.sidebar button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.sidebar ul li {
-  margin: 20px 0;
+.sidebar li {
+  margin: 10px 0;
 }
 
-.sidebar ul li a {
+.sidebar li a {
+  color: #fff;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  display: block;
-  padding: 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar ul li a:hover {
-  background-color: #007bff;
-  color: #ffffff;
-}
-
-.sidebarCollapsed ul li a {
-  text-align: center;
-  padding: 15px 0;
-}
-
-.sidebarCollapsed h2 {
+.collapsed {
   display: none;
 }
 
 .content {
-  flex: 1;
-  margin-left: 240px;
-  padding: 40px;
-  background-color: #f8f9fa;
-  transition: margin-left 0.3s;
-}
-
-.contentCollapsed {
-  margin-left: 60px;
-}
-
-.card {
-  background-color: #ffffff;
+  flex-grow: 1;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.menuButton {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #343a40;
-  background: none;
-  border: none;
+  background-color: #f0f0f0;
 }
