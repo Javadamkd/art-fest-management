@@ -1,60 +1,20 @@
 // pages/search.js
-import React, { useState } from 'react';
-import styles from '../styles/Search.module.css';
+import Head from 'next/head';
+import Sidebar from '../components/Sidebar';
 
-const SearchPage = () => {
-  const [results, setResults] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const search = (e) => {
-    e.preventDefault();
-    // Example search implementation
-    const exampleResults = [
-      { name: 'Candidate 1', program: 'Program A', team: 'Team X' },
-      { name: 'Candidate 2', program: 'Program B', team: 'Team Y' },
-    ];
-    setResults(exampleResults.filter(result => 
-      result.name.includes(searchTerm) || 
-      result.program.includes(searchTerm) || 
-      result.team.includes(searchTerm)
-    ));
-    setSearchTerm('');
-  };
-
+export default function Search() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Search</h1>
-      <form onSubmit={search} className={styles.form}>
-        <input 
-          type="text" 
-          value={searchTerm} 
-          onChange={(e) => setSearchTerm(e.target.value)} 
-          placeholder="Search by candidate, program, or team"
-          required 
-          className={styles.input}
-        />
-        <button type="submit" className={styles.button}>Search</button>
-      </form>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Program</th>
-            <th>Team</th>
-          </tr>
-        </thead>
-        <tbody>
-          {results.map((result, index) => (
-            <tr key={index} className={styles.row}>
-              <td>{result.name}</td>
-              <td>{result.program}</td>
-              <td>{result.team}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container">
+      <Head>
+        <title>Search</title>
+      </Head>
+      <Sidebar />
+      <div className="content">
+        <div className="card">
+          <h1>Search</h1>
+          <p>Content for the Search page.</p>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default SearchPage;
+}
