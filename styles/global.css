@@ -1,9 +1,9 @@
 /* styles/global.css */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
 .container {
@@ -11,10 +11,9 @@ body {
 }
 
 .sidebar {
-  width: 250px;
-  background-color: #333;
+  width: 200px;
+  background-color: #f4f4f4;
   padding: 20px;
-  color: white;
 }
 
 .sidebar ul {
@@ -23,27 +22,22 @@ body {
 }
 
 .sidebar ul li {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .sidebar ul li a {
-  color: white;
   text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
+  color: #333;
 }
 
 .content {
-  flex-grow: 1;
+  flex: 1;
   padding: 20px;
 }
 
 .card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
