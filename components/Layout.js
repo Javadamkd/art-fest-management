@@ -5,16 +5,17 @@ export default function Layout({ children }) {
   return (
     <div className="container">
       <Sidebar />
-      <div className="content">
+      <main className="content">
         {children}
-      </div>
+      </main>
     </div>
   );
 }
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <nav className="sidebar">
+      <h2>Art Fest Management</h2>
       <ul>
         <li>
           <Link href="/candidates">Candidates</Link>
@@ -31,10 +32,7 @@ function Sidebar() {
         <li>
           <Link href="/search">Search</Link>
         </li>
-        <li>
-          <Link href="/">Art Fest Management</Link>
-        </li>
       </ul>
-    </div>
+    </nav>
   );
 }
