@@ -1,21 +1,37 @@
 import Link from 'next/link';
+import styles from './Header.module.css'; // Import CSS module
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
+      <h1>Art Fest Management</h1>
       <nav>
-        <ul>
+        <ul className={styles.navList}>
           <li>
-            <Link href="/results">
-              <a>Results</a>
+            <Link href="/candidates">
+              <a>Candidates</a>
             </Link>
           </li>
           <li>
-            <Link href="/programs">
-              <a>Programs</a>
+            <Link href="/teams">
+              <a>Teams</a>
             </Link>
           </li>
-          {/* Add other navigation links here */}
+          <li>
+            <Link href="/basic">
+              <a>Basic</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/rank-top">
+              <a>Rank & Top</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/search">
+              <a>Search</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
