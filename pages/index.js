@@ -1,75 +1,13 @@
-// pages/index.js
-import Link from 'next/link';
+// pages/art-fest-management.js
+import Layout from '../components/Layout';
 
-export default function Home() {
+export default function ArtFestManagement() {
   return (
-    <div className="container">
-      <Sidebar />
-      <div className="content">
-        <h1>Art Fest Management</h1>
-        <h2>Art Fest Management</h2>
-        <ul>
-          <li>
-            <Link href="/candidates">
-              Candidates
-            </Link>
-          </li>
-          <li>
-            <Link href="/teams">
-              Teams
-            </Link>
-          </li>
-          <li>
-            <Link href="/basic">
-              Basic
-            </Link>
-          </li>
-          <li>
-            <Link href="/rank-top">
-              Rank & Top
-            </Link>
-          </li>
-          <li>
-            <Link href="/search">
-              Search
-            </Link>
-          </li>
-        </ul>
+    <Layout>
+      <h1>Art Fest Management</h1>
+      <div className="card">
+        <p>Manage the art fest events...</p>
       </div>
-    </div>
-  );
-}
-
-function Sidebar() {
-  return (
-    <div className="sidebar">
-      <ul>
-        <li>
-          <Link href="/candidates">
-            Candidates
-          </Link>
-        </li>
-        <li>
-          <Link href="/teams">
-            Teams
-          </Link>
-        </li>
-        <li>
-          <Link href="/basic">
-            Basic
-          </Link>
-        </li>
-        <li>
-          <Link href="/rank-top">
-            Rank & Top
-          </Link>
-        </li>
-        <li>
-          <Link href="/search">
-            Search
-          </Link>
-        </li>
-      </ul>
-    </div>
+    </Layout>
   );
 }
