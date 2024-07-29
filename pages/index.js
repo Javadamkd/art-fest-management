@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/link'; // Import Link from next/link
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -29,6 +29,9 @@ export default function Home() {
           </ul>
         </nav>
       </main>
+      <footer>
+        © 2024 Art Fest Management
+      </footer>
     </div>
   );
 }
