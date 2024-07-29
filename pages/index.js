@@ -7,19 +7,29 @@ export default function Home() {
         <h1>Art Fest Management</h1>
         <ul>
           <li>
-            <Link href="/candidates">Candidates</Link>
+            <Link href="/candidates" legacyBehavior>
+              <a>Candidates</a>
+            </Link>
           </li>
           <li>
-            <Link href="/teams">Teams</Link>
+            <Link href="/teams" legacyBehavior>
+              <a>Teams</a>
+            </Link>
           </li>
           <li>
-            <Link href="/basic">Basic</Link>
+            <Link href="/basic" legacyBehavior>
+              <a>Basic</a>
+            </Link>
           </li>
           <li>
-            <Link href="/rank-top">Rank & Top</Link>
+            <Link href="/rank-top" legacyBehavior>
+              <a>Rank & Top</a>
+            </Link>
           </li>
           <li>
-            <Link href="/search">Search</Link>
+            <Link href="/search" legacyBehavior>
+              <a>Search</a>
+            </Link>
           </li>
         </ul>
       </div>
