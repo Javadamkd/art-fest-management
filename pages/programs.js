@@ -1,9 +1,12 @@
-// pages/programs.js
-export default function ProgramsPage() {
+import React from 'react';
+
+const Programs = () => {
   return (
-    <div className="container">
+    <div>
       <h1>Programs</h1>
-      {/* Your content goes here */}
+      {/* Add your Programs page content here */}
     </div>
   );
-}
+};
+
+export default Programs;
