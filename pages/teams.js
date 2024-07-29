@@ -1,4 +1,6 @@
 // pages/teams.js
+import Link from 'next/link';
+
 export default function Teams() {
   return (
     <div className="container">
