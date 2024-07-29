@@ -1,4 +1,6 @@
 // pages/basic.js
+import Link from 'next/link';
+
 export default function Basic() {
   return (
     <div className="container">
