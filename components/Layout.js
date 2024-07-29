@@ -32,7 +32,7 @@ function Sidebar() {
           <Link href="/search">Search</Link>
         </li>
         <li>
-          <Link href="/art-fest-management">Art Fest Management</Link>
+          <Link href="/">Art Fest Management</Link>
         </li>
       </ul>
     </div>
