@@ -1,16 +1,36 @@
 // components/Sidebar.js
 import Link from 'next/link';
 
-export default function Sidebar() {
-  return (
-    <div className="sidebar">
-      <ul>
-        <li><Link href="/candidates"><a>Candidates</a></Link></li>
-        <li><Link href="/teams"><a>Teams</a></Link></li>
-        <li><Link href="/basic"><a>Basic</a></Link></li>
-        <li><Link href="/rank-top"><a>Rank & Top</a></Link></li>
-        <li><Link href="/search"><a>Search</a></Link></li>
-      </ul>
-    </div>
-  );
-}
+const Sidebar = () => (
+  <div className="sidebar">
+    <ul>
+      <li>
+        <Link href="/candidates">
+          Candidates
+        </Link>
+      </li>
+      <li>
+        <Link href="/teams">
+          Teams
+        </Link>
+      </li>
+      <li>
+        <Link href="/basic">
+          Basic
+        </Link>
+      </li>
+      <li>
+        <Link href="/rank-top">
+          Rank & Top
+        </Link>
+      </li>
+      <li>
+        <Link href="/search">
+          Search
+        </Link>
+      </li>
+    </ul>
+  </div>
+);
+
+export default Sidebar;
