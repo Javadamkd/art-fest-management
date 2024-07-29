@@ -41,7 +41,7 @@ export default function Layout({ children }) {
           ☰
         </button>
       </aside>
-      <main className={styles.content}>{children}</main>
+      <main className={sidebarCollapsed ? styles.contentCollapsed : styles.content}>{children}</main>
     </div>
   );
 }
