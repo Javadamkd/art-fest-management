@@ -1,58 +1,47 @@
 // components/Layout.js
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
+import styles from '../styles/Layout.module.css';
 
 export default function Layout({ children }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
-    <div className={`container ${isCollapsed ? 'content-collapsed' : ''}`}>
-      <Sidebar isCollapsed={isCollapsed} />
-      <main className="content">
-        <span className="menu-button" onClick={toggleSidebar}>
+    <div className={sidebarCollapsed ? styles.containerCollapsed : styles.container}>
+      <aside className={sidebarCollapsed ? styles.sidebarCollapsed : styles.sidebar}>
+        <h2>Art Fest Management</h2>
+        <ul>
+          <li>
+            <Link href="/candidates" legacyBehavior>
+              <a>Candidates</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/teams" legacyBehavior>
+              <a>Teams</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/basic" legacyBehavior>
+              <a>Basic</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/rank-top" legacyBehavior>
+              <a>Rank & Top</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/search" legacyBehavior>
+              <a>Search</a>
+            </Link>
+          </li>
+        </ul>
+        <button className={styles.menuButton} onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
           ☰
-        </span>
-        {children}
-      </main>
+        </button>
+      </aside>
+      <main className={styles.content}>{children}</main>
     </div>
-  );
-}
-
-function Sidebar({ isCollapsed }) {
-  return (
-    <nav className={`sidebar ${isCollapsed ? 'sidebar-collapsed' : ''}`}>
-      <h2>Art Fest</h2>
-      <ul>
-        <li>
-          <Link href="/candidates">
-            <a>Candidates</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/teams">
-            <a>Teams</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/basic">
-            <a>Basic</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/rank-top">
-            <a>Rank & Top</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/search">
-            <a>Search</a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
   );
 }
