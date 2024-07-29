@@ -8,42 +8,41 @@ export default function Layout({ children }) {
 
   return (
     <div className={styles.container}>
-      <aside className={sidebarCollapsed ? styles.sidebarCollapsed : styles.sidebar}>
-        <h2>Art Fest Management</h2>
-        <ul>
+      <div className={styles.sidebar}>
+        <button onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
+          {sidebarCollapsed ? 'Expand' : 'Collapse'}
+        </button>
+        <ul className={sidebarCollapsed ? styles.collapsed : ''}>
           <li>
-            <Link href="/candidates" legacyBehavior>
+            <Link href="/candidates">
               <a>Candidates</a>
             </Link>
           </li>
           <li>
-            <Link href="/teams" legacyBehavior>
+            <Link href="/teams">
               <a>Teams</a>
             </Link>
           </li>
           <li>
-            <Link href="/basic" legacyBehavior>
+            <Link href="/basic">
               <a>Basic</a>
             </Link>
           </li>
           <li>
-            <Link href="/rank-top" legacyBehavior>
+            <Link href="/rank-top">
               <a>Rank & Top</a>
             </Link>
           </li>
           <li>
-            <Link href="/search" legacyBehavior>
+            <Link href="/search">
               <a>Search</a>
             </Link>
           </li>
         </ul>
-        <button className={styles.menuButton} onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
-          ☰
-        </button>
-      </aside>
-      <main className={sidebarCollapsed ? styles.contentCollapsed : styles.content}>
+      </div>
+      <div className={styles.content}>
         {children}
-      </main>
+      </div>
     </div>
   );
 }
