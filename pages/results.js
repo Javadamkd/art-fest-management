@@ -1,9 +1,12 @@
-// pages/results.js
-export default function ResultsPage() {
+import React from 'react';
+
+const Results = () => {
   return (
-    <div className="container">
+    <div>
       <h1>Results</h1>
-      {/* Your content goes here */}
+      {/* Add your Results page content here */}
     </div>
   );
-}
+};
+
+export default Results;
