@@ -1,20 +1,30 @@
-// pages/index.js
-import Head from 'next/head';
-import Sidebar from '../components/Sidebar';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>Art Fest Management</title>
-      </Head>
-      <Sidebar />
+      <div className="sidebar">
+        <h1>Art Fest Management</h1>
+        <ul>
+          <li>
+            <Link href="/candidates">Candidates</Link>
+          </li>
+          <li>
+            <Link href="/teams">Teams</Link>
+          </li>
+          <li>
+            <Link href="/basic">Basic</Link>
+          </li>
+          <li>
+            <Link href="/rank-top">Rank & Top</Link>
+          </li>
+          <li>
+            <Link href="/search">Search</Link>
+          </li>
+        </ul>
+      </div>
       <div className="content">
-        <div className="card">
-          <h1>Art Fest Management</h1>
-          <p>Welcome to the Art Fest Management System.</p>
-          <a href="/downloads" className="download-button">Download Now</a>
-        </div>
+        <h1>Art Fest Management</h1>
       </div>
     </div>
   );
