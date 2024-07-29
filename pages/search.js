@@ -5,9 +5,7 @@ export default function Search() {
   return (
     <Layout>
       <h1>Search</h1>
-      <div className="card">
-        <p>Search for candidates, teams, etc...</p>
-      </div>
+      <p>Content for Search page.</p>
     </Layout>
   );
 }
