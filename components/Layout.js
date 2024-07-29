@@ -1,4 +1,3 @@
-// components/Layout.js
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../styles/Layout.module.css';
@@ -6,38 +5,22 @@ import styles from '../styles/Layout.module.css';
 export default function Layout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
+  const toggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.sidebar}>
-        <button onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
-          {sidebarCollapsed ? 'Expand' : 'Collapse'}
+      <div className={sidebarCollapsed ? styles.sidebarCollapsed : styles.sidebar}>
+        <button onClick={toggleSidebar} className={styles.toggleButton}>
+          ☰
         </button>
-        <ul className={sidebarCollapsed ? styles.collapsed : ''}>
-          <li>
-            <Link href="/candidates" legacyBehavior>
-              <a>Candidates</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/teams" legacyBehavior>
-              <a>Teams</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/basic" legacyBehavior>
-              <a>Basic</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/rank-top" legacyBehavior>
-              <a>Rank & Top</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/search" legacyBehavior>
-              <a>Search</a>
-            </Link>
-          </li>
+        <ul>
+          <li><Link href="/candidates">Candidates</Link></li>
+          <li><Link href="/teams">Teams</Link></li>
+          <li><Link href="/basic">Basic</Link></li>
+          <li><Link href="/rank-top">Rank & Top</Link></li>
+          <li><Link href="/search">Search</Link></li>
         </ul>
       </div>
       <div className={styles.content}>
