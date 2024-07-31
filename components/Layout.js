@@ -1,14 +1,14 @@
 // components/Layout.js
 import Sidebar from './Sidebar';
-import styles from './Layout.module.css';
+import styles from '../styles/Layout.module.css'; // Corrected import path
 
 export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <main className={styles.content}>
+      <div className={styles.content}>
         {children}
-      </main>
+      </div>
     </div>
   );
 }
