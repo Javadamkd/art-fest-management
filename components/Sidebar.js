@@ -1,33 +1,15 @@
-// components/Sidebar.js
 import Link from 'next/link';
-import styles from '../styles/Layout.module.css'; // Corrected import path
+import styles from './sidebar.module.css';
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
-      <ul>
-        <li>
-          <Link href="/candidates">Candidates</Link>
-        </li>
-        <li>
-          <Link href="/teams">Teams</Link>
-        </li>
-        <li>
-          <Link href="/basic">Basic</Link>
-        </li>
-        <li>
-          <Link href="/programs">Programs</Link>
-        </li>
-        <li>
-          <Link href="/result">Result</Link>
-        </li>
-        <li>
-          <Link href="/rank-top">Rank & Top</Link>
-        </li>
-        <li>
-          <Link href="/search">Search</Link>
-        </li>
-      </ul>
+      <Link href="/candidates"><a>Candidates</a></Link>
+      <Link href="/teams"><a>Teams</a></Link>
+      <Link href="/programs"><a>Programs</a></Link>
+      {/* Add more links as needed */}
     </div>
   );
-}
+};
+
+export default Sidebar;
