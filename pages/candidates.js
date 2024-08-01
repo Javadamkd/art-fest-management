@@ -1,32 +1,59 @@
-import Layout from '../components/Layout';
+import { useState } from 'react';
+import styles from './candidates.module.css';
 
-export default function Candidates() {
+const Candidates = () => {
+  const [candidates, setCandidates] = useState([]);
+
+  const addCandidate = (e) => {
+    e.preventDefault();
+    const newCandidate = {
+      code: e.target.code.value,
+      name: e.target.name.value,
+      team: e.target.team.value,
+      section: e.target.section.value,
+      class: e.target.class.value,
+    };
+    setCandidates([...candidates, newCandidate]);
+    e.target.reset(); // Reset form fields
+  };
+
   return (
-    <Layout>
-      <h1>Candidates</h1>
-      <form>
-        <label>
-          Code:
-          <input type="text" name="code" />
-        </label>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Team:
-          <input type="text" name="team" />
-        </label>
-        <label>
-          Section:
-          <input type="text" name="section" />
-        </label>
-        <label>
-          Class:
-          <input type="text" name="class" />
-        </label>
-        <button type="submit">Add Candidate</button>
+    <div className={styles.pageContainer}>
+      <h2>Candidates</h2>
+      <form onSubmit={addCandidate} className={styles.formContainer}>
+        <input type="text" name="code" placeholder="Code" required />
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="team" placeholder="Team" required />
+        <input type="text" name="section" placeholder="Section" required />
+        <input type="text" name="class" placeholder="Class" required />
+        <button type="submit" className={styles.button}>Add Candidate</button>
       </form>
-    </Layout>
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Team</th>
+              <th>Section</th>
+              <th>Class</th>
+            </tr>
+          </thead>
+          <tbody>
+            {candidates.map((candidate, index) => (
+              <tr key={index}>
+                <td>{candidate.code}</td>
+                <td>{candidate.name}</td>
+                <td>{candidate.team}</td>
+                <td>{candidate.section}</td>
+                <td>{candidate.class}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
-}
+};
+
+export default Candidates;
