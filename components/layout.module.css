@@ -1,0 +1,8 @@
+/* components/layout.module.css */
+.layout {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
