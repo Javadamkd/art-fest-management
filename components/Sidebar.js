@@ -1,4 +1,6 @@
-import Link from 'next/link';
+export default function Sidebar() {
+  // component code
+}import Link from 'next/link';
 
 const Sidebar = () => {
   return (
