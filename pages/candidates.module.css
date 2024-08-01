@@ -1,0 +1,14 @@
+import { useState } from 'react';
+import styles from './candidates.module.css';
+
+const Candidates = () => {
+  const [candidates, setCandidates] = useState([]);
+
+  return (
+    <div className={styles.container}>
+      {/* Your component code */}
+    </div>
+  );
+};
+
+export default Candidates;
