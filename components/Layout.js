@@ -1,15 +1,10 @@
 import Sidebar from './Sidebar';
-import styles from './layout.module.css';
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
-    <div className={styles.layout}>
+    <div>
       <Sidebar />
-      <div className={styles.content}>
-        {children}
-      </div>
+      {children}
     </div>
   );
-};
-
-export default Layout;
+}
