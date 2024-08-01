@@ -1,0 +1,22 @@
+/* components/sidebar.module.css */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.sidebarLink {
+  display: block;
+  margin: 10px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebarLink:hover {
+  color: #0070f3;
+}
