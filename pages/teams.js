@@ -1,29 +1,39 @@
+// pages/teams.js
 import { useState } from 'react';
 import styles from './teams.module.css';
 
 const Teams = () => {
   const [teams, setTeams] = useState([]);
 
-  const addTeam = (e) => {
-    e.preventDefault();
+  const addTeam = (event) => {
+    event.preventDefault();
     const newTeam = {
-      code: e.target.code.value,
-      name: e.target.name.value,
+      code: event.target.elements.code.value,
+      name: event.target.elements.name.value,
     };
     setTeams([...teams, newTeam]);
-    e.target.reset(); // Reset form fields
+    event.target.reset(); // Reset form fields
   };
 
   return (
-    <div className={styles.pageContainer}>
-      <h2>Teams</h2>
-      <form onSubmit={addTeam} className={styles.formContainer}>
-        <input type="text" name="code" placeholder="Code" required />
-        <input type="text" name="name" placeholder="Name" required />
-        <button type="submit" className={styles.button}>Add Team</button>
-      </form>
+    <div className={styles.container}>
+      <div className={styles.formContainer}>
+        <h2>Add Team</h2>
+        <form onSubmit={addTeam}>
+          <div className={styles.formGroup}>
+            <label htmlFor="code">Code</label>
+            <input type="text" id="code" name="code" required />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <button type="submit">Add Team</button>
+        </form>
+      </div>
       <div className={styles.tableContainer}>
-        <table className={styles.table}>
+        <h2>Teams List</h2>
+        <table>
           <thead>
             <tr>
               <th>Code</th>
