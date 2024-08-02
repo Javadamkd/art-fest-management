@@ -1,10 +1,12 @@
 // pages/index.js
 import Layout from '../components/Layout';
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
-      {/* Keep this area blank */}
+      <div>Welcome to the Home Page</div>
     </Layout>
   );
-}
+};
+
+export default Home;
