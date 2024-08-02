@@ -1,32 +1,39 @@
+// pages/candidates.js
 import { useState } from 'react';
 import styles from './candidates.module.css';
 
 const Candidates = () => {
   const [candidates, setCandidates] = useState([]);
 
-  const addCandidate = (e) => {
-    e.preventDefault();
-    const newCandidate = {
-      code: e.target.code.value,
-      name: e.target.name.value,
-      team: e.target.team.value,
-      section: e.target.section.value,
-      class: e.target.class.value,
-    };
-    setCandidates([...candidates, newCandidate]);
-    e.target.reset(); // Reset form fields
+  const addCandidate = (event) => {
+    event.preventDefault();
+    // Add candidate logic here
   };
 
   return (
-    <div className={styles.pageContainer}>
-      <h2>Candidates</h2>
-      <form onSubmit={addCandidate} className={styles.formContainer}>
-        <input type="text" name="code" placeholder="Code" required />
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="text" name="team" placeholder="Team" required />
-        <input type="text" name="section" placeholder="Section" required />
-        <input type="text" name="class" placeholder="Class" required />
-        <button type="submit" className={styles.button}>Add Candidate</button>
+    <div className={styles.container}>
+      <form onSubmit={addCandidate}>
+        <div className={styles.formGroup}>
+          <label>Code</label>
+          <input type="text" className={styles.inputField} />
+        </div>
+        <div className={styles.formGroup}>
+          <label>Name</label>
+          <input type="text" className={styles.inputField} />
+        </div>
+        <div className={styles.formGroup}>
+          <label>Team</label>
+          <input type="text" className={styles.inputField} />
+        </div>
+        <div className={styles.formGroup}>
+          <label>Section</label>
+          <input type="text" className={styles.inputField} />
+        </div>
+        <div className={styles.formGroup}>
+          <label>Class</label>
+          <input type="text" className={styles.inputField} />
+        </div>
+        <button type="submit" className={styles.submitButton}>Add Candidate</button>
       </form>
       <div className={styles.tableContainer}>
         <table className={styles.table}>
