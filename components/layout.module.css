@@ -1,8 +1,10 @@
-/* components/layout.module.css */
-.layout {
+/* layout.module.css */
+.container {
   display: flex;
 }
 
-.content {
+.mainContent {
   flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
