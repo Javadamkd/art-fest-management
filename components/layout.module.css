@@ -1,4 +1,21 @@
 /* layout.module.css */
+.sidebar {
+  position: fixed;
+  left: -250px; /* Hidden initially */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* When open, slide in */
+}
+
 .menuButton {
   position: fixed;
   top: 10px;
@@ -7,7 +24,15 @@
   background: none;
   border: none;
   font-size: 24px;
-  color: black; /* Change color to black */
+  color: black; /* Color changed to black */
   cursor: pointer;
   padding: 5px 10px;
+}
+
+.content {
+  transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+  margin-left: 250px; /* Shift content when sidebar is open */
 }
