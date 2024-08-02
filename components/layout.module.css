@@ -1,38 +1,72 @@
-/* layout.module.css */
+/* components/layout.module.css */
+
+/* Sidebar styling */
 .sidebar {
   position: fixed;
-  left: -250px; /* Hidden initially */
+  left: 0;
   top: 0;
   width: 250px;
   height: 100%;
   background-color: #333;
-  color: white;
-  padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 1000;
+  overflow-x: hidden;
+  transition: transform 0.3s ease;
+  transform: translateX(-250px); /* Hidden by default */
+  z-index: 1000; /* Ensure it appears above content */
+  padding-top: 20px;
 }
 
 .sidebar.open {
-  left: 0; /* When open, slide in */
+  transform: translateX(0); /* Show sidebar when open */
 }
 
+.sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 16px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #bdbdbd; /* Lighter shade on hover */
+}
+
+/* Menu button styling */
 .menuButton {
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 1100; /* Above sidebar */
+  font-size: 30px;
   background: none;
   border: none;
-  font-size: 24px;
-  color: black; /* Color changed to black */
+  color: black;
+  z-index: 1100; /* Ensure it is always on top */
   cursor: pointer;
-  padding: 5px 10px;
 }
 
+/* Content area styling */
 .content {
+  margin-left: 0;
   transition: margin-left 0.3s ease;
 }
 
 .content.shifted {
-  margin-left: 250px; /* Shift content when sidebar is open */
+  margin-left: 250px; /* Content shifted when sidebar is open */
+  transition: margin-left 0.3s ease;
 }
+
