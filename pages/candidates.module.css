@@ -1,14 +1,32 @@
-import { useState } from 'react';
-import styles from './candidates.module.css';
+/* candidates.module.css */
 
-const Candidates = () => {
-  const [candidates, setCandidates] = useState([]);
+.container {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
 
-  return (
-    <div className={styles.container}>
-      {/* Your component code */}
-    </div>
-  );
-};
+.form {
+  margin-bottom: 20px;
+}
 
-export default Candidates;
+.input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles as needed */
