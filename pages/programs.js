@@ -1,59 +1,25 @@
 // pages/programs.js
-import { useState } from 'react';
+import React from 'react';
 import styles from './programs.module.css';
 
 const Programs = () => {
-  const [programs, setPrograms] = useState([]);
-
-  const addProgram = (event) => {
-    event.preventDefault();
-    // Logic to add a program (This should be defined as per your application logic)
-    // Example:
-    const newProgram = {
-      code: event.target.elements.code.value,
-      name: event.target.elements.name.value,
-      section: event.target.elements.section.value,
-    };
-    setPrograms([...programs, newProgram]);
-  };
-
   return (
-    <div className={styles.container}>
-      <form onSubmit={addProgram}>
-        <div className={styles.formGroup}>
-          <label htmlFor="code">Code</label>
-          <input id="code" type="text" className={styles.inputField} required />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="name">Name</label>
-          <input id="name" type="text" className={styles.inputField} required />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="section">Section</label>
-          <input id="section" type="text" className={styles.inputField} required />
-        </div>
-        <button type="submit" className={styles.submitButton}>Add Program</button>
+    <div className={styles.formContainer}>
+      <form>
+        <label htmlFor="programName">Program Name:</label>
+        <input type="text" id="programName" name="programName" required />
+
+        <label htmlFor="date">Date:</label>
+        <input type="text" id="date" name="date" required />
+
+        <label htmlFor="time">Time:</label>
+        <input type="text" id="time" name="time" required />
+
+        <label htmlFor="venue">Venue:</label>
+        <input type="text" id="venue" name="venue" required />
+
+        <button type="submit">Submit</button>
       </form>
-      <div className={styles.tableContainer}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Section</th>
-            </tr>
-          </thead>
-          <tbody>
-            {programs.map((program, index) => (
-              <tr key={index}>
-                <td>{program.code}</td>
-                <td>{program.name}</td>
-                <td>{program.section}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
     </div>
   );
 };
