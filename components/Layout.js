@@ -1,10 +1,14 @@
+// components/Layout.js
 import Sidebar from './Sidebar';
+import styles from './layout.module.css';
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <Sidebar />
-      {children}
+      <main className={styles.mainContent}>{children}</main>
     </div>
   );
-}
+};
+
+export default Layout;
