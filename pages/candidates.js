@@ -7,31 +7,40 @@ const Candidates = () => {
 
   const addCandidate = (event) => {
     event.preventDefault();
-    // Add candidate logic here
+    // Capture form data
+    const newCandidate = {
+      code: event.target.elements.code.value,
+      name: event.target.elements.name.value,
+      team: event.target.elements.team.value,
+      section: event.target.elements.section.value,
+      class: event.target.elements.class.value,
+    };
+    // Update state
+    setCandidates([...candidates, newCandidate]);
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={addCandidate}>
         <div className={styles.formGroup}>
-          <label>Code</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="code">Code</label>
+          <input id="code" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Name</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Team</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="team">Team</label>
+          <input id="team" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Section</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="section">Section</label>
+          <input id="section" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Class</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="class">Class</label>
+          <input id="class" type="text" className={styles.inputField} required />
         </div>
         <button type="submit" className={styles.submitButton}>Add Candidate</button>
       </form>
