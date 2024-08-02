@@ -18,7 +18,9 @@ const Candidates = () => {
         <label htmlFor="party" className={styles.label}>Party:</label>
         <input type="text" id="party" name="party" required className={styles.input} />
 
-        <button type="submit" className={styles.button}>Submit</button>
+        <div className={styles.buttonContainer}>
+          <button type="submit" className={styles.button}>Submit</button>
+        </div>
       </form>
     </div>
   );
