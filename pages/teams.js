@@ -1,50 +1,55 @@
-// pages/teams.js
 import { useState } from 'react';
 import styles from './teams.module.css';
 
 const Teams = () => {
   const [teams, setTeams] = useState([]);
+  const [newTeam, setNewTeam] = useState({ name: '', code: '' });
 
-  const addTeam = (event) => {
-    event.preventDefault();
-    const newTeam = {
-      code: event.target.elements.code.value,
-      name: event.target.elements.name.value,
-    };
+  const handleInputChange = (e) => {
+    setNewTeam({ ...newTeam, [e.target.name]: e.target.value });
+  };
+
+  const handleAddTeam = () => {
     setTeams([...teams, newTeam]);
-    event.target.reset(); // Reset form fields
+    setNewTeam({ name: '', code: '' });
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h2>Add Team</h2>
-        <form onSubmit={addTeam}>
-          <div className={styles.formGroup}>
-            <label htmlFor="code">Code</label>
-            <input type="text" id="code" name="code" required />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <button type="submit">Add Team</button>
-        </form>
+        <label className={styles.label}>Team Name:</label>
+        <input
+          className={styles.input}
+          type="text"
+          name="name"
+          value={newTeam.name}
+          onChange={handleInputChange}
+        />
+        <label className={styles.label}>Team Code:</label>
+        <input
+          className={styles.input}
+          type="text"
+          name="code"
+          value={newTeam.code}
+          onChange={handleInputChange}
+        />
+        <button className={styles.button} onClick={handleAddTeam}>
+          Add Team
+        </button>
       </div>
       <div className={styles.tableContainer}>
-        <h2>Teams List</h2>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
-              <th>Code</th>
-              <th>Name</th>
+              <th>Team Name</th>
+              <th>Team Code</th>
             </tr>
           </thead>
           <tbody>
             {teams.map((team, index) => (
               <tr key={index}>
-                <td>{team.code}</td>
                 <td>{team.name}</td>
+                <td>{team.code}</td>
               </tr>
             ))}
           </tbody>
