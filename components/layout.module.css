@@ -1,11 +1,22 @@
-/* components/layout.module.css */
+/* layout.module.css */
 .container {
   display: flex;
 }
 
-.mainContent {
-  flex: 1;
-  padding-left: 220px; /* Adjust to avoid overlapping with the sidebar */
-  padding-top: 20px;
-  background-color: #f8f9fa;
+.sidebar {
+  width: 250px;
+  height: 100vh; /* Full height */
+  position: fixed; /* Fix the sidebar */
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+.content {
+  margin-left: 250px; /* Same width as sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Full width minus sidebar */
+  position: relative; /* To stack over other elements if needed */
 }
