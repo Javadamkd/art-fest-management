@@ -19,16 +19,16 @@ const Layout = ({ children }) => {
         <h2>Menu</h2>
         <ul>
           <li>
-            <Link href="/"><a>Home</a></Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/teams"><a>Teams</a></Link>
+            <Link href="/teams">Teams</Link>
           </li>
           <li>
-            <Link href="/candidates"><a>Candidates</a></Link>
+            <Link href="/candidates">Candidates</Link>
           </li>
           <li>
-            <Link href="/programs"><a>Programs</a></Link>
+            <Link href="/programs">Programs</Link>
           </li>
         </ul>
       </div>
