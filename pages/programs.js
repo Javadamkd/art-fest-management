@@ -18,7 +18,9 @@ const Programs = () => {
         <label htmlFor="venue" className={styles.label}>Venue:</label>
         <input type="text" id="venue" name="venue" required className={styles.input} />
 
-        <button type="submit" className={styles.button}>Submit</button>
+        <div className={styles.buttonContainer}>
+          <button type="submit" className={styles.button}>Submit</button>
+        </div>
       </form>
     </div>
   );
