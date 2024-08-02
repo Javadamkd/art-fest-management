@@ -19,20 +19,28 @@ const Layout = ({ children }) => {
         <h2>Menu</h2>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" legacyBehavior>
+              <a>Home</a>
+            </Link>
           </li>
           <li>
-            <Link href="/teams">Teams</Link>
+            <Link href="/teams" legacyBehavior>
+              <a>Teams</a>
+            </Link>
           </li>
           <li>
-            <Link href="/candidates">Candidates</Link>
+            <Link href="/candidates" legacyBehavior>
+              <a>Candidates</a>
+            </Link>
           </li>
           <li>
-            <Link href="/programs">Programs</Link>
+            <Link href="/programs" legacyBehavior>
+              <a>Programs</a>
+            </Link>
           </li>
         </ul>
       </div>
-      <div className={`${styles.content} ${isOpen ? styles.shifted : ''}`}>
+      <div className={`${styles.content} ${isOpen ? styles.shifted : ''}`} onClick={() => setIsOpen(false)}>
         {children}
       </div>
     </div>
