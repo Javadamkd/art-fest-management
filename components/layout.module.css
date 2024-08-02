@@ -1,10 +1,11 @@
-/* layout.module.css */
+/* components/layout.module.css */
 .container {
   display: flex;
 }
 
 .mainContent {
   flex: 1;
-  padding: 20px;
+  padding-left: 220px; /* Adjust to avoid overlapping with the sidebar */
+  padding-top: 20px;
   background-color: #f8f9fa;
 }
