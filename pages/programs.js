@@ -7,23 +7,30 @@ const Programs = () => {
 
   const addProgram = (event) => {
     event.preventDefault();
-    // Add program logic here
+    // Logic to add a program (This should be defined as per your application logic)
+    // Example:
+    const newProgram = {
+      code: event.target.elements.code.value,
+      name: event.target.elements.name.value,
+      section: event.target.elements.section.value,
+    };
+    setPrograms([...programs, newProgram]);
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={addProgram}>
         <div className={styles.formGroup}>
-          <label>Code</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="code">Code</label>
+          <input id="code" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Name</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" className={styles.inputField} required />
         </div>
         <div className={styles.formGroup}>
-          <label>Section</label>
-          <input type="text" className={styles.inputField} />
+          <label htmlFor="section">Section</label>
+          <input id="section" type="text" className={styles.inputField} required />
         </div>
         <button type="submit" className={styles.submitButton}>Add Program</button>
       </form>
@@ -49,3 +56,6 @@ const Programs = () => {
       </div>
     </div>
   );
+};
+
+export default Programs;
