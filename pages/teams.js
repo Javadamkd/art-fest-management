@@ -1,60 +1,26 @@
+// pages/teams.js
 import { useState } from 'react';
-import styles from './teams.module.css';
+import styles from './Teams.module.css';
 
 const Teams = () => {
-  const [teams, setTeams] = useState([]);
-  const [newTeam, setNewTeam] = useState({ name: '', code: '' });
-
-  const handleInputChange = (e) => {
-    setNewTeam({ ...newTeam, [e.target.name]: e.target.value });
-  };
-
-  const handleAddTeam = () => {
-    setTeams([...teams, newTeam]);
-    setNewTeam({ name: '', code: '' });
-  };
+  const [teamCode, setTeamCode] = useState('');
+  const [teamName, setTeamName] = useState('');
+  const [teamLeader, setTeamLeader] = useState('');
 
   return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <label className={styles.label}>Team Name:</label>
-        <input
-          className={styles.input}
-          type="text"
-          name="name"
-          value={newTeam.name}
-          onChange={handleInputChange}
-        />
-        <label className={styles.label}>Team Code:</label>
-        <input
-          className={styles.input}
-          type="text"
-          name="code"
-          value={newTeam.code}
-          onChange={handleInputChange}
-        />
-        <button className={styles.button} onClick={handleAddTeam}>
-          Add Team
-        </button>
-      </div>
-      <div className={styles.tableContainer}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Team Name</th>
-              <th>Team Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teams.map((team, index) => (
-              <tr key={index}>
-                <td>{team.name}</td>
-                <td>{team.code}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div className={styles.formContainer}>
+      <form className={styles.teamForm}>
+        <label>Team Code:</label>
+        <input type="text" name="teamCode" placeholder="Enter Team Code" value={teamCode} onChange={(e) => setTeamCode(e.target.value)} />
+        
+        <label>Team Name:</label>
+        <input type="text" name="teamName" placeholder="Enter Team Name" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
+        
+        <label>Team Leader:</label>
+        <input type="text" name="teamLeader" placeholder="Enter Team Leader" value={teamLeader} onChange={(e) => setTeamLeader(e.target.value)} />
+        
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
