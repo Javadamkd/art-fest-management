@@ -12,46 +12,51 @@ const Candidates = () => {
     <div className={styles.formContainer}>
       <form className={styles.form}>
         <div className={styles.inputGroup}>
-          <label>Chest No</label>
+          <label className={styles.label}>Chest No</label>
           <input
             type="text"
             value={chestNo}
             onChange={(e) => setChestNo(e.target.value)}
+            className={styles.input}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label>Name</label>
+          <label className={styles.label}>Name</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className={styles.input}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label>Team Code</label>
+          <label className={styles.label}>Team Code</label>
           <input
             type="text"
             value={teamCode}
             onChange={(e) => setTeamCode(e.target.value)}
+            className={styles.input}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label>Section</label>
+          <label className={styles.label}>Section</label>
           <input
             type="text"
             value={section}
             onChange={(e) => setSection(e.target.value)}
+            className={styles.input}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label>Class</label>
+          <label className={styles.label}>Class</label>
           <input
             type="text"
             value={className}
             onChange={(e) => setClassName(e.target.value)}
+            className={styles.input}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.button}>Submit</button>
       </form>
     </div>
   );
