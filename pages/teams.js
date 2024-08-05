@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/teams.module.css'; // Import the CSS module
 
 const Teams = () => {
   const [teamCode, setTeamCode] = useState('');
@@ -13,24 +14,26 @@ const Teams = () => {
   };
 
   return (
-    <div>
-      <h1>Teams</h1>
-      <form onSubmit={addTeam}>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Teams</h1>
+      <form onSubmit={addTeam} className={styles.form}>
         <input
           type="text"
           placeholder="Team Code"
           value={teamCode}
           onChange={(e) => setTeamCode(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Team Name"
           value={teamName}
           onChange={(e) => setTeamName(e.target.value)}
+          className={styles.input}
         />
-        <button type="submit">Add Team</button>
+        <button type="submit" className={styles.button}>Add Team</button>
       </form>
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Team Code</th>
