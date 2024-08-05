@@ -1,26 +1,51 @@
-// pages/teams.js
 import { useState } from 'react';
-import styles from './Teams.module.css';
 
 const Teams = () => {
   const [teamCode, setTeamCode] = useState('');
   const [teamName, setTeamName] = useState('');
-  const [teamLeader, setTeamLeader] = useState('');
+  const [teams, setTeams] = useState([]);
+
+  const addTeam = (e) => {
+    e.preventDefault();
+    setTeams([...teams, { teamCode, teamName }]);
+    setTeamCode('');
+    setTeamName('');
+  };
 
   return (
-    <div className={styles.formContainer}>
-      <form className={styles.teamForm}>
-        <label>Team Code:</label>
-        <input type="text" name="teamCode" placeholder="Enter Team Code" value={teamCode} onChange={(e) => setTeamCode(e.target.value)} />
-        
-        <label>Team Name:</label>
-        <input type="text" name="teamName" placeholder="Enter Team Name" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
-        
-        <label>Team Leader:</label>
-        <input type="text" name="teamLeader" placeholder="Enter Team Leader" value={teamLeader} onChange={(e) => setTeamLeader(e.target.value)} />
-        
-        <button type="submit">Submit</button>
+    <div>
+      <h1>Teams</h1>
+      <form onSubmit={addTeam}>
+        <input
+          type="text"
+          placeholder="Team Code"
+          value={teamCode}
+          onChange={(e) => setTeamCode(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Team Name"
+          value={teamName}
+          onChange={(e) => setTeamName(e.target.value)}
+        />
+        <button type="submit">Add Team</button>
       </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Team Code</th>
+            <th>Team Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams.map((team, index) => (
+            <tr key={index}>
+              <td>{team.teamCode}</td>
+              <td>{team.teamName}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
