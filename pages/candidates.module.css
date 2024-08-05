@@ -1,59 +1,48 @@
-/* Wrapper for the form */
+/* Form container */
 .formContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure the container takes the full height of the viewport */
-}
-
-/* Form styling */
-.form {
-  display: grid;
-  grid-template-columns: auto auto; /* Define two columns */
-  gap: 10px;
-  width: 80%; /* Set a default width */
-  max-width: 800px; /* Limit the maximum width */
-  padding: 20px;
+  height: 100vh;
   background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.label {
-  display: flex;
-  align-items: center;
+/* Candidate form styling */
+.candidateForm {
+  width: 20%; /* Set to 1/5th of the container width */
+  max-width: 400px; /* Limit the maximum width */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.candidateForm label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
-.input {
+.candidateForm input {
   width: 100%;
   padding: 10px;
-  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width */
 }
 
-.fullWidth {
-  grid-column: span 2; /* Make the element span both columns */
-}
-
-.buttonContainer {
-  grid-column: span 2; /* Center the button across both columns */
-  display: flex;
-  justify-content: center;
-}
-
-.button {
+.candidateForm button {
+  display: block;
+  width: 100%;
   padding: 10px;
-  border: none;
-  border-radius: 4px;
   background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 50%;
-  max-width: 150px;
 }
 
-.button:hover {
+.candidateForm button:hover {
   background-color: #45a049;
 }
