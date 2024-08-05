@@ -1,48 +1,32 @@
-// components/Layout.js
-import React, { useState } from 'react';
+// components/Layout.js (or wherever your navigation is defined)
 import Link from 'next/link';
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div>
-      <button className={styles.menuButton} onClick={toggleSidebar}>
-        &#9776;
-      </button>
-      <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-        <h2>Menu</h2>
+    <div className={styles.container}>
+      <nav className={styles.nav}>
         <ul>
           <li>
-            <Link href="/" legacyBehavior>
-              <a>Home</a>
-            </Link>
+            <Link href="/"><a>Home</a></Link>
           </li>
           <li>
-            <Link href="/teams" legacyBehavior>
-              <a>Teams</a>
-            </Link>
+            <Link href="/teams"><a>Teams</a></Link>
           </li>
           <li>
-            <Link href="/candidates" legacyBehavior>
-              <a>Candidates</a>
-            </Link>
+            <Link href="/candidates"><a>Candidates</a></Link>
           </li>
           <li>
-            <Link href="/programs" legacyBehavior>
-              <a>Programs</a>
-            </Link>
+            <Link href="/programs"><a>Programs</a></Link>
+          </li>
+          <li>
+            <Link href="/results"><a>Results</a></Link> {/* Add this line */}
           </li>
         </ul>
-      </div>
-      <div className={`${styles.content} ${isOpen ? styles.shifted : ''}`} onClick={() => setIsOpen(false)}>
+      </nav>
+      <main>
         {children}
-      </div>
+      </main>
     </div>
   );
 };
