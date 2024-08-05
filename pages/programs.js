@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/programs.module.css'; // Import the CSS module
 
 const Programs = () => {
   const [code, setCode] = useState('');
@@ -19,22 +20,24 @@ const Programs = () => {
   };
 
   return (
-    <div>
-      <h1>Programs</h1>
-      <form onSubmit={addProgram}>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Programs</h1>
+      <form onSubmit={addProgram} className={styles.form}>
         <input
           type="text"
           placeholder="Code"
           value={code}
           onChange={(e) => setCode(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className={styles.input}
         />
-        <select value={section} onChange={(e) => setSection(e.target.value)}>
+        <select value={section} onChange={(e) => setSection(e.target.value)} className={styles.input}>
           <option value="" disabled>Select Section</option>
           <option value="Aliya">Aliya</option>
           <option value="Thaniya">Thaniya</option>
@@ -42,23 +45,23 @@ const Programs = () => {
           <option value="Bidaya">Bidaya</option>
           <option value="Uoola">Uoola</option>
         </select>
-        <select value={scoreType} onChange={(e) => setScoreType(e.target.value)}>
+        <select value={scoreType} onChange={(e) => setScoreType(e.target.value)} className={styles.input}>
           <option value="" disabled>Select Score Type</option>
           <option value="Individual">Individual</option>
           <option value="Group">Group</option>
           <option value="Shared by two">Shared by two</option>
           <option value="Master">Master</option>
         </select>
-        <select value={gradeType} onChange={(e) => setGradeType(e.target.value)}>
+        <select value={gradeType} onChange={(e) => setGradeType(e.target.value)} className={styles.input}>
           <option value="" disabled>Select Grade Type</option>
           <option value="Individual">Individual</option>
           <option value="Group">Group</option>
           <option value="Shared by two">Shared by two</option>
           <option value="Master">Master</option>
         </select>
-        <button type="submit">Add Program</button>
+        <button type="submit" className={styles.button}>Add Program</button>
       </form>
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Code</th>
