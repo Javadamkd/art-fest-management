@@ -1,26 +1,26 @@
 // pages/candidates.js
-import React from 'react';
-import styles from './candidates.module.css';
+import styles from './Candidates.module.css';
 
 const Candidates = () => {
   return (
     <div className={styles.formContainer}>
-      <form className={styles.form}>
-        <label htmlFor="name" className={styles.label}>Name:</label>
-        <input type="text" id="name" name="name" required className={styles.input} />
-
-        <label htmlFor="position" className={styles.label}>Position:</label>
-        <input type="text" id="position" name="position" required className={styles.input} />
-
-        <label htmlFor="class" className={styles.label}>Class:</label>
-        <input type="text" id="class" name="class" required className={styles.input} />
-
-        <label htmlFor="party" className={styles.label}>Party:</label>
-        <input type="text" id="party" name="party" required className={styles.input} />
-
-        <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.button}>Submit</button>
-        </div>
+      <form className={styles.candidateForm}>
+        <label>Chest No:</label>
+        <input type="text" name="chestNo" placeholder="Enter Chest No" />
+        
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Enter Name" />
+        
+        <label>Team Code:</label>
+        <input type="text" name="teamCode" placeholder="Enter Team Code" />
+        
+        <label>Section:</label>
+        <input type="text" name="section" placeholder="Enter Section" />
+        
+        <label>Class:</label>
+        <input type="text" name="class" placeholder="Enter Class" />
+        
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
