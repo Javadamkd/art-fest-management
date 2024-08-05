@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/candidates.module.css'; // Import the CSS module
 
 const Candidates = () => {
   const [chestNo, setChestNo] = useState('');
@@ -19,42 +20,47 @@ const Candidates = () => {
   };
 
   return (
-    <div>
-      <h1>Candidates</h1>
-      <form onSubmit={addCandidate}>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Candidates</h1>
+      <form onSubmit={addCandidate} className={styles.form}>
         <input
           type="text"
           placeholder="Chest No"
           value={chestNo}
           onChange={(e) => setChestNo(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Team Code"
           value={teamCode}
           onChange={(e) => setTeamCode(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Section"
           value={section}
           onChange={(e) => setSection(e.target.value)}
+          className={styles.input}
         />
         <input
           type="text"
           placeholder="Class"
           value={className}
           onChange={(e) => setClassName(e.target.value)}
+          className={styles.input}
         />
-        <button type="submit">Add Candidate</button>
+        <button type="submit" className={styles.button}>Add Candidate</button>
       </form>
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Chest No</th>
