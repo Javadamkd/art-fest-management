@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/candidates.module.css'; // Import the CSS module
+import styles from '../styles/candidates.module.css';
 
 const Candidates = () => {
   const [chestNo, setChestNo] = useState('');
@@ -7,81 +7,52 @@ const Candidates = () => {
   const [teamCode, setTeamCode] = useState('');
   const [section, setSection] = useState('');
   const [className, setClassName] = useState('');
-  const [candidates, setCandidates] = useState([]);
-
-  const addCandidate = (e) => {
-    e.preventDefault();
-    setCandidates([...candidates, { chestNo, name, teamCode, section, className }]);
-    setChestNo('');
-    setName('');
-    setTeamCode('');
-    setSection('');
-    setClassName('');
-  };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.heading}>Candidates</h1>
-      <form onSubmit={addCandidate} className={styles.form}>
-        <input
-          type="text"
-          placeholder="Chest No"
-          value={chestNo}
-          onChange={(e) => setChestNo(e.target.value)}
-          className={styles.input}
-        />
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className={styles.input}
-        />
-        <input
-          type="text"
-          placeholder="Team Code"
-          value={teamCode}
-          onChange={(e) => setTeamCode(e.target.value)}
-          className={styles.input}
-        />
-        <input
-          type="text"
-          placeholder="Section"
-          value={section}
-          onChange={(e) => setSection(e.target.value)}
-          className={styles.input}
-        />
-        <input
-          type="text"
-          placeholder="Class"
-          value={className}
-          onChange={(e) => setClassName(e.target.value)}
-          className={styles.input}
-        />
-        <button type="submit" className={styles.button}>Add Candidate</button>
+    <div className={styles.formContainer}>
+      <form className={styles.form}>
+        <div className={styles.inputGroup}>
+          <label>Chest No</label>
+          <input
+            type="text"
+            value={chestNo}
+            onChange={(e) => setChestNo(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Team Code</label>
+          <input
+            type="text"
+            value={teamCode}
+            onChange={(e) => setTeamCode(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Section</label>
+          <input
+            type="text"
+            value={section}
+            onChange={(e) => setSection(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Class</label>
+          <input
+            type="text"
+            value={className}
+            onChange={(e) => setClassName(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
       </form>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Chest No</th>
-            <th>Name</th>
-            <th>Team Code</th>
-            <th>Section</th>
-            <th>Class</th>
-          </tr>
-        </thead>
-        <tbody>
-          {candidates.map((candidate, index) => (
-            <tr key={index}>
-              <td>{candidate.chestNo}</td>
-              <td>{candidate.name}</td>
-              <td>{candidate.teamCode}</td>
-              <td>{candidate.section}</td>
-              <td>{candidate.className}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   );
 };
