@@ -1,26 +1,31 @@
 // components/Sidebar.js
+import React from 'react';
 import Link from 'next/link';
-import styles from './sidebar.module.css';
+import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
-      <h2>Menu</h2>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/teams">Teams</Link>
-        </li>
-        <li>
-          <Link href="/candidates">Candidates</Link>
-        </li>
-        <li>
-          <Link href="/programs">Programs</Link>
-        </li>
-        {/* Add more links as needed */}
-      </ul>
+      <div className={styles.menuItem}>
+        <Link href="/">
+          <a className={`${styles.menuLink} ${styles.home}`}>Home</a>
+        </Link>
+      </div>
+      <div className={styles.menuItem}>
+        <Link href="/teams">
+          <a className={`${styles.menuLink} ${styles.teams}`}>Teams</a>
+        </Link>
+      </div>
+      <div className={styles.menuItem}>
+        <Link href="/candidates">
+          <a className={`${styles.menuLink} ${styles.candidates}`}>Candidates</a>
+        </Link>
+      </div>
+      <div className={styles.menuItem}>
+        <Link href="/programs">
+          <a className={`${styles.menuLink} ${styles.programs}`}>Programs</a>
+        </Link>
+      </div>
     </div>
   );
 };
