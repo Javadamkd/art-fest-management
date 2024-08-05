@@ -1,32 +1,47 @@
-/* components/sidebar.module.css */
+/* Sidebar styling */
 .sidebar {
-  width: 200px;
-  background-color: #343a40;
-  color: #fff;
-  height: 100vh;
-  padding: 20px;
+  width: 250px;
+  background-color: #f5f5f5;
+  padding-top: 20px;
   position: fixed;
+  height: 100%;
 }
 
-.sidebar h2 {
+/* Menu item box */
+.menuItem {
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  color: #fff;
+/* General menu link styling */
+.menuLink {
+  display: block;
+  color: white;
   text-decoration: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar a:hover {
-  background-color: #495057;
-  padding-left: 10px;
+/* Individual color styling for each menu item */
+.home {
+  background-color: #2196F3; /* Blue */
+}
+
+.teams {
+  background-color: #4CAF50; /* Green */
+}
+
+.candidates {
+  background-color: #FF9800; /* Orange */
+}
+
+.programs {
+  background-color: #f44336; /* Red */
+}
+
+/* Hover effect */
+.menuLink:hover {
+  background-color: #333;
 }
